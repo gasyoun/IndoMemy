@@ -151,4 +151,4 @@ def main(out_path):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "review", "pilot_sheet.html"))
+    main(sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "review", "sufferingmahabharata-meme-pilot-10_26-09-2026_review.html"))
