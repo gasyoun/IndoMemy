@@ -16,11 +16,18 @@ _Создан: 26-09-2026 · Мем-паблик «Страдающее Сред
 
 ## Источники (жёсткое правило)
 
-- **Музеи open access** (MET, Smithsonian, LACMA, Cleveland), **Wikimedia Commons**,
-  **локальные PD-сканы** (издание Параба 1888, Sundarakandam — сканы в
-  [RussianRamayana/Leitan-Sundarakanda](https://github.com/gasyoun/RussianRamayana/tree/main/Leitan-Sundarakanda)).
+- **Музеи open access** (MET, Smithsonian, LACMA, Cleveland), **Wikimedia Commons**.
+- **Рукописные текстовые сканы (Devanagari-страницы) НЕ брать** — рулинг MG 26-09-2026
+  (голос по партии 1: все три текстовые карточки забракованы). Только иллюстративные
+  изображения (сцены, миниатюры, живопись).
 - **t.me/ramayanaru — НЕ файловый источник** (канал-лид для находок; файл берём из первоисточника).
 - У каждого мема в [memes.tsv](memes.tsv) непустые `source_url` и `license`.
+
+## Стиль подписей (рулинг MG 26-09-2026)
+
+Короткие и рубленые (≤6–8 слов), бытовой юмор, без канцелярита — стилистика
+«Страдающего Средневековья»: несовместимое старинного изображения и современного
+быта решает контраст, а не длина текста.
 
 ## Реестр — memes.tsv
 
@@ -28,7 +35,10 @@ _Создан: 26-09-2026 · Мем-паблик «Страдающее Сред
 
 - `humor_class`: `быт` (70%) / `повестка` (20%) / `субхашита` (10%)
 - `status`: `draft` → `approved` (лист MG) → `posted`
-- Партия 1 (пилот, H5507): SM-001…SM-010, все `draft`.
+- Партия 1 (пилот, H5507): **7 approved 26-09-2026** (SM-001…007; лист:
+  [ссылка](https://gasyoun.github.io/vote/sheets/sufferingmahabharata-meme-pilot-10_26-09-2026_review.html),
+  вердикты: [review/suffering-mahabharata-pilot-10_26-09-2026_decisions.json](review/suffering-mahabharata-pilot-10_26-09-2026_decisions.json)),
+  SM-008…010 отклонены (рукописи без иллюстраций). Постинг ждёт создания канала.
 
 ## Конвейер
 
