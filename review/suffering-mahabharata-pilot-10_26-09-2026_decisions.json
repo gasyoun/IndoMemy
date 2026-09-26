@@ -1,0 +1,69 @@
+{
+  "sheet_id": "suffering-mahabharata-pilot-10_26-09-2026",
+  "generated": "2026-09-26T20:24:52.220Z",
+  "reviewedAt": "2026-09-26T20:24:52.220Z",
+  "decided": 10,
+  "time_total_seconds": 322,
+  "items": [
+    {
+      "id": "SM-001",
+      "decision": "approve",
+      "note": "А. «Понедельник: все задачи в статусе «горит»»",
+      "time_seconds": 47
+    },
+    {
+      "id": "SM-002",
+      "decision": "approve",
+      "note": "В. «Спамеров нашли. Отпустили с почётом» - а тексты точно коррелируют со стилистикой страдающего средневековья? включая длину?",
+      "time_seconds": 85
+    },
+    {
+      "id": "SM-003",
+      "decision": "approve",
+      "note": "Б. «Тимбилдинг прошёл активно»",
+      "time_seconds": 25
+    },
+    {
+      "id": "SM-004",
+      "decision": "approve",
+      "note": "Предложить смешнее и короче подписи",
+      "time_seconds": 48
+    },
+    {
+      "id": "SM-005",
+      "decision": "approve",
+      "note": "В. «Утвердил повестку. Повестка не заметила»",
+      "time_seconds": 25
+    },
+    {
+      "id": "SM-006",
+      "decision": "approve",
+      "note": "А. «Включила камеру на созвоне раньше всех» ",
+      "time_seconds": 21
+    },
+    {
+      "id": "SM-007",
+      "decision": "approve",
+      "note": "Б. «Приехал на созвон красиво»",
+      "time_seconds": 29
+    },
+    {
+      "id": "SM-008",
+      "decision": "reject",
+      "note": "Рукописи без иллюстраций не брать",
+      "time_seconds": 28
+    },
+    {
+      "id": "SM-009",
+      "decision": "reject",
+      "note": "Рукописи без иллюстраций не брать",
+      "time_seconds": 8
+    },
+    {
+      "id": "SM-010",
+      "decision": "reject",
+      "note": "Рукописи без иллюстраций не брать",
+      "time_seconds": 6
+    }
+  ]
+}
