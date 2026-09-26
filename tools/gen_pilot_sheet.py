@@ -88,9 +88,10 @@ def main(out_path):
             for i, c in enumerate(caps)) + "</ol>"
         q = ('<img src="%s%s" alt="%s" style="max-width:640px;max-height:520px;'
              'display:block;margin:6px auto;border:1px solid #ccc;background:#fff;">'
+             '<p style="text-align:center"><b>%s</b> · источник: %s</p>'
              '<p style="text-align:center">Утвердить карточку в пилот? Выбранную подпись '
              'укажите в заметке: <b>А / Б / В</b> или свой вариант текста.</p>'
-             % (RAW, r["file"], TITLES[cid]))
+             % (RAW, r["file"], TITLES[cid], TITLES[cid], r["attribution"]))
         note = ""
         if cid == "SM-009":
             note = ("<p><b>Красная линия:</b> подпись прославляющая (границы объявлены), "
@@ -126,6 +127,12 @@ def main(out_path):
         "filters": [("быт", "быт (70%)"), ("повестка", "повестка (20%)"),
                     ("субхашита", "субхашита (10%)")],
         "generated": "2026-09-26",
+        # V13 (H2854): no bare internal id on a reviewer's plate — each SM-NNN
+        # card names its real-world artwork/verse identity in the question.
+        "identity_gate": {
+            "patterns": [r"SM-\d{3}"],
+            "labels": {cid: TITLES[cid] for cid in TITLES},
+        },
     }
     screening = {
         "deterministic": 10, "lookup": 0, "agent": 10, "human": 0,

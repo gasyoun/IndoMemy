@@ -1,0 +1,20 @@
+{
+  "sheet_id": "suffering-mahabharata-pilot-10_26-09-2026",
+  "rows": 10,
+  "joined": {
+    "memes.tsv": [
+      "id",
+      "file",
+      "source_url",
+      "license",
+      "attribution",
+      "caption",
+      "humor_class"
+    ]
+  },
+  "omitted": {
+    "RussianRamayana/Leitan-Sundarakanda/*_media (остальные 617 сканов)": "пул зарегистрирован в Uprava DATA_LAYERS_CENSUS.md; в пилот взяты 3 страницы с наиболее мем-способными стихами"
+  },
+  "cards": 10,
+  "notes": []
+}
