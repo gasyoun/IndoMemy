@@ -1,0 +1,18 @@
+{
+  "sheet_id": "sufferingmahabharata-meme-batch2-10_27-09-2026",
+  "rows": 10,
+  "joined": {
+    "memes.tsv": [
+      "id",
+      "file",
+      "source_url",
+      "license",
+      "attribution",
+      "caption",
+      "humor_class"
+    ]
+  },
+  "omitted": {},
+  "cards": 10,
+  "notes": []
+}
