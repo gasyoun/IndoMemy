@@ -51,12 +51,16 @@ def crop_square(im, box, long_edge):
     side = max(64, int(round(frac * min(w, h))))
     x0 = int(round(cx * w - side / 2))
     y0 = int(round(cy * h - side / 2))
-    x0 = max(0, min(x0, w - side))
+    xc, yc = x0, y0                       # запрошенный угол
+    x0 = max(0, min(x0, w - side))        # clamp: угол внутри листа
     y0 = max(0, min(y0, h - side))
+    clamped = abs(x0 - xc) > 2 or abs(y0 - yc) > 2   # >2 px — не округление, а сдвиг
     frag = im.crop((x0, y0, x0 + side, y0 + side))
     if frag.size[0] > long_edge:
         frag = frag.resize((long_edge, long_edge), LANCZOS)
-    return frag, side
+    real_cx = (x0 + side / 2) / w
+    real_cy = (y0 + side / 2) / h
+    return frag, side, clamped, (real_cx, real_cy)
 
 
 def main():
@@ -83,7 +87,15 @@ def main():
         im = Image.open(master).convert("RGB")
         if max(im.size) < MIN_MASTER:
             warns.append(f"{cid}: мастер {im.size} < {MIN_MASTER} — фрагмент выйдет мягким, нужен пере-источник")
-        frag, side = crop_square(im, r["fragment_box"], args.long)
+        frag, side, clamped, real = crop_square(im, r["fragment_box"], args.long)
+        if clamped:
+            cx, cy, _ = parse_box(r["fragment_box"])
+            warns.append(f"{cid}: fragment_box вне диапазона — центр сдвинут "
+                         f"({cx:.2f},{cy:.2f} → {real[0]:.2f},{real[1]:.2f}); "
+                         f"уменьшите frac или сдвиньте cx,cy внутрь листа")
+        if side < 500:
+            warns.append(f"{cid}: фрагмент {side}px < 500 — жанровая норма ~600 px; "
+                         f"мастер мелкий, нужен пере-источник")
         out = os.path.join("images", "fragments", f"{cid}.jpg")
         frag.save(os.path.join(REPO, out), quality=88, optimize=True)
         r["fragment_file"] = out
@@ -105,7 +117,7 @@ def main():
         print(f"[ok] fragment_file проставлен в memes.tsv ({len(done)} строк)")
 
     if args.sheet and done:
-        cell, cols = 300, 4
+        cell, cols = 420, 4
         picked = [r for r in rows if (r.get("fragment_box") or "").strip()]
         picked = [r for r in picked if os.path.exists(os.path.join(REPO, r["fragment_file"] or
                                                                    os.path.join("images", "fragments", r["id"] + ".jpg")))]
