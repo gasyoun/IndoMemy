@@ -1,7 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
 
+## [0.1.2] - 2026-09-27
 - **H5529 — партия 2 «Страдающей Бхараты»: 10 карт (SM-011…020, микс быт/повестка/субхашита 7/2/1), собранных сразу на фрагментах.** Мастера ≥1500 px только из open access (MET CC0 ×4, Cleveland CC0 ×1, Chester Beatty PD ×1, Wikimedia PD ×4); фрагменты нарезаны `tools/crop_fragment.py` без предупреждений; SM-012 — рисунок тоном Кесу Калана (вторичный формат жанра). Лист утверждения партии 2: `review/sufferingmahabharata-meme-batch2-10_27-09-2026_review.html` (хаб-копия в gasyoun.github.io/vote). Ноль постов — красная линия №3.
 
 - **SM-003 пере-источен (H5529):** прежний мастер «Битва из рукописи Рамаяны» (Commons, 800×547) не давал фрагмента ≥500 px, большей версии файла на Commons нет. Замена: «Ибрахим, сын Хамзы, мчится в битву» (Хамзанама Акбара, ок. 1570-е, Chester Beatty, 3840×5716, Public domain) — та же сценика «все бьются со всеми», подпись MG «Тимбилдинг прошёл активно» сохранена. Подтверждение замены MG — новый лист партии 1 **на фрагментах**: `review/sufferingmahabharata-meme-batch1-fragments_27-09-2026_review.html` (26-09 MG голосовал по мастерам; постится фрагмент — красная линия №3 требует утверждения того, что уходит в канал).
