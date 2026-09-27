@@ -68,10 +68,11 @@ def main(out_path):
     tsv = os.path.join(REPO, "memes.tsv")
     with open(tsv, newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f, delimiter="\t"))
-    assert len(rows) == 10, "expected exactly 10 pilot rows, got %d" % len(rows)
+    assert rows and len({r["id"] for r in rows}) == len(rows), "пустой или дублирующийся реестр"
     for r in rows:
         assert r["source_url"] and r["license"], r["id"]
-        assert os.path.exists(os.path.join(REPO, r["file"])), r["file"]
+        img = r.get("fragment_file") or r["file"]  # в лист идёт то, что постится
+        assert os.path.exists(os.path.join(REPO, img)), img
 
     manifest = EvidenceManifest("suffering-mahabharata-pilot-10_26-09-2026",
                                 [r["id"] for r in rows], repo_root=REPO)
@@ -81,6 +82,7 @@ def main(out_path):
     items = []
     for r in rows:
         cid = r["id"]
+        img = r.get("fragment_file") or r["file"]
         caps = CAPTIONS[cid]
         opts = "<ol>" + "".join(
             "<li><b>%s.</b> «%s»%s</li>" % ("АБВ"[i], c,
@@ -91,7 +93,7 @@ def main(out_path):
              '<p style="text-align:center"><b>%s</b> · источник: %s</p>'
              '<p style="text-align:center">Утвердить карточку в пилот? Выбранную подпись '
              'укажите в заметке: <b>А / Б / В</b> или свой вариант текста.</p>'
-             % (RAW, r["file"], TITLES[cid], TITLES[cid], r["attribution"]))
+             % (RAW, img, TITLES[cid], TITLES[cid], r["attribution"]))
         note = ""
         if cid == "SM-009":
             note = ("<p><b>Красная линия:</b> подпись прославляющая (границы объявлены), "
