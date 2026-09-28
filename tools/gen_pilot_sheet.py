@@ -7,6 +7,7 @@ is archival; this script is the regen path. Emitter: csl-pyutil render_review_sh
 Usage:
   python3 tools/gen_pilot_sheet.py batch1   # партия 1: 7 утверждённых карт, sheet на фрагментах (27-09-2026)
   python3 tools/gen_pilot_sheet.py batch2   # партия 2: 10 новых карт (7/2/1), sheet на фрагментах
+  python3 tools/gen_pilot_sheet.py recrop   # H5540: 8 перекропленных фрагментов на переподтверждение
 
 Партия 1 (26-09-2026) голосовалась MG по МАСТЕРАМ; лист batch1 — подтверждение
 ФРАГМЕНТОВ (формат 27-09) перед постингом: red line №3 «ноль постов без
@@ -21,7 +22,7 @@ from csl_pyutil.review_sheet import render_review_sheet
 from csl_pyutil.evidence import EvidenceManifest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RAW = "https://raw.githubusercontent.com/gasyoun/SufferingMahabharata/main/"
+RAW = "https://raw.githubusercontent.com/gasyoun/IndoMemy/main/"
 
 # Вариант А всегда зеркалит основную подпись в memes.tsv (для партии 1 —
 # утверждённую MG 26-09-2026; порядок вариантов обновлён под выбор MG).
@@ -122,6 +123,16 @@ SHEETS = {
                     "(монохром), вторичный формат жанра.",
         "note_SM-003": "",
     },
+    "recrop": {
+        "ids": ["SM-004", "SM-005", "SM-007", "SM-011",
+                "SM-012", "SM-015", "SM-016", "SM-019"],
+        "sheet_id": "indomemy-meme-recrop-8_28-09-2026",
+        "title": "«Страдающая Бхарата» — переподтверждение: 8 перекропленных фрагментов",
+        "subtitle": "H5540 · перекроп 28-09 по заметкам MG (голоса batch1-fragments 6/1 и batch2 5/5): "
+                    "фрагмент показывает то, что уйдёт в канал; мастер — рядом для сверки "
+                    "(правило SM-016 28-09). Подписи — выбранные MG. Да → draft→approved.",
+        "note_SM-003": "",
+    },
 }
 
 
@@ -188,7 +199,7 @@ def main(party):
         "sheet_id": cfg["sheet_id"],
         "title": cfg["title"],
         "subtitle": cfg["subtitle"],
-        "footer": "Реестр: github.com/gasyoun/SufferingMahabharata (memes.tsv). "
+        "footer": "Реестр: github.com/gasyoun/IndoMemy (memes.tsv). "
                   "Постинг (t.me/samskrtamru + VK-зеркало, тег #индомемы, каденция 1 раз в 2 недели) "
                   "гейтится этим листом: approved → пост. Ноль постов без утверждения MG.",
         "approve_label": "Одобрить",

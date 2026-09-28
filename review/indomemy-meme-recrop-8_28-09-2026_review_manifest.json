@@ -1,0 +1,18 @@
+{
+  "sheet_id": "indomemy-meme-recrop-8_28-09-2026",
+  "rows": 8,
+  "joined": {
+    "memes.tsv": [
+      "id",
+      "file",
+      "source_url",
+      "license",
+      "attribution",
+      "caption",
+      "humor_class"
+    ]
+  },
+  "omitted": {},
+  "cards": 8,
+  "notes": []
+}
