@@ -1,0 +1,51 @@
+{
+  "sheet_id": "sufferingmahabharata-meme-batch1-fragments_27-09-2026",
+  "generated": "2026-09-28T04:17:12.100Z",
+  "reviewedAt": "2026-09-28T04:17:12.100Z",
+  "decided": 7,
+  "time_total_seconds": 457,
+  "items": [
+    {
+      "id": "SM-001",
+      "decision": "approve",
+      "note": "А. «Понедельник: все задачи в статусе «горит»»",
+      "time_seconds": 143
+    },
+    {
+      "id": "SM-002",
+      "decision": "approve",
+      "note": "Двое, кто пересылал мемы мимо рабочего чата",
+      "time_seconds": 81
+    },
+    {
+      "id": "SM-003",
+      "decision": "approve",
+      "note": "А. «Тимбилдинг прошёл активно» ",
+      "time_seconds": 34
+    },
+    {
+      "id": "SM-004",
+      "decision": "approve",
+      "note": "«Разбудили Кумбхакарну. Зря.» \nzoom out a bit, do not cut heads of the 2 main heros",
+      "time_seconds": 64
+    },
+    {
+      "id": "SM-005",
+      "decision": "reject",
+      "note": "crop gone wrong, only left ear is left",
+      "time_seconds": 32
+    },
+    {
+      "id": "SM-006",
+      "decision": "approve",
+      "note": "А. «Включила камеру на созвоне раньше всех» ",
+      "time_seconds": 30
+    },
+    {
+      "id": "SM-007",
+      "decision": "approve",
+      "note": "А. «Приехал на созвон красиво» \ncrop done wrong, find crop rules for photos. Too much free space above and on the right. Too little of his head seen",
+      "time_seconds": 73
+    }
+  ]
+}
